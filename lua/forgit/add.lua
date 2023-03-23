@@ -1,12 +1,13 @@
 local Layout = require("nui.layout")
 local Popup = require("nui.popup")
 local Menu = require("nui.menu")
-local modified_files = require("forgit.utils").get_git_modified_files()
-local replace_char = require("forgit.utils").replace_char
+local utils = require("forgit.utils")
+local replace_char = utils.replace_char
 
 local M = {}
 
 function M.render()
+  local modified_files = utils.get_git_modified_files()
   local popup_options = {
     position = "50%",
     border = {

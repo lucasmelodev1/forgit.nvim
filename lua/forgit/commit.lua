@@ -1,11 +1,13 @@
 local Popup = require("nui.popup")
 local Input = require("nui.input")
 local Layout = require("nui.layout")
-local added_files = require("forgit.utils").get_git_added_files()
+local utils = require("forgit.utils")
 
 local M = {}
 
 function M.render()
+  local added_files = utils.get_git_added_files()
+
   local popup = Popup({
     enter = true,
     focusable = true,
