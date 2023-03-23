@@ -1,7 +1,7 @@
 local M = {}
 
 function M.get_git_added_files()
-  local handle = io.popen("git ls-files --cached")
+  local handle = io.popen("git diff --name-only --cached")
   local result = handle:read("*a")
   handle:close()
 
